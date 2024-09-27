@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Bangladesh</title>
+    
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                donate: '#B4F461',
+              }
+            }
+          }
+        }
+      </script>
+
+</head>
+<body>
+  
+
+<nav class="sticky top-0 w-full">
+    <div class="navbar bg-gray-50 p-6">
+        
+        <div class="navbar-start ">
+            <a class="btn bg-donate px-8 font-bold" onclick="toggle_pages(event)">Blog</a>
+          </div>
+
+        <div class="navbar-center lg:flex">
+            <div class="flex items-center justify-center gap-4"> 
+            <img src ="./assets/logo.png"/ class=" w-12 h-12">
+        
+          <p class="text-xl font-bold">  Donate Bangladesh </p>
+
+        </div>
+        </div>
+        
+
+
+        <div class="navbar-end">
+            
+            <img src = "./assets/coin.png" />
+            <a class="btn  text-xl ml-2" > <span id = "balance">5500</span> BDT</a>
+          </div>
+      </div>
+
+      
+</nav>
+
+  <!-- Blog Section -->
+<div class="hidden" id="blog-section">
+    <h1 class="text-4xl font-bold text-center mb-10 mt-10"> Important FAQs </h1>
+    
+    <div class="mx-auto w-3/4 mb-96">
+    <div class="join join-vertical w-full mx-auto">
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" checked="checked" />
+          <div class="collapse-title text-xl font-medium">What happened in flood incident in Bangladesh in 2024?</div>
+          <div class="collapse-content">
+            <p>Flood happened in 2024 when India opened their dam and this flooded Bangladesh causing huge damage. </p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium">Which areas were most affected? </div>
+          <div class="collapse-content">
+            <p>Feni, Noakhali and adjacent areas were most affected</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+            <input type="radio" name="my-accordion-4" />
+            <div class="collapse-title text-xl font-medium">What are the details of the quota movement? </div>
+            <div class="collapse-content">
+              <p>A systematic protest that started off as an anti-discrimination movement and turned into an overthrowing of government</p>
+            </div>
+          </div>
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium">How can we donate? </div>
+          <div class="collapse-content">
+            <p>You can donate using this site, navigate to home channel and choose which area to donate to </p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+     <!-- Home Section -->
+
+<div id="home-section">
+<div class="flex gap-3 justify-center m-10 backdrop-blur-md  h-28 items-center mt-0 sticky top-24">
+    <a class="btn btn-ghost bg-donate px-8 py-2 border border-gray-100" id = "donation-toggle-button" onclick="toggle('donation-section','donation-toggle-button')">Donation</a>
+    <a class="btn btn-ghost px-8 py-2 border border-gray-100" id = "history-toggle-button"  onclick="toggle('history-section','history-toggle-button')">History</a>
+  </div>
+
+    <main >
+     <div id = "donation-section" class="flex flex-col gap-10">
+        <div class = "flex flex-col md:flex-row justify-between gap-20 mx-auto w-3/4 border border-gray-100 p-5 rounded-lg">
+
+            <img src = "./assets/noakhali.png"/>
+
+            <div class = "flex flex-col gap-8 ">
+                <div>
+                <a class="btn bg-gray-100 ">
+                    <img src = "./assets/coin.png">
+                    <p class="text-sm" ><span class = "fund"> 0 </span> BDT</p>
+                
+                </a>
+            </div>
+                    <h2 class="text-lg font-bold">Donate for <span class="donation-title">Flood at Noakhali, Bangladesh</span></h2>
+                    <p class="text-sm text-gray-100">
+                        The recent floods in Noakhali have caused significant damage to homes  
+                        infrastructure. Your donation will help provide essential supplies and  to those 
+                        affected by this disaster. Every contribution, big or small, makes  difference.
+                         Please join us in supporting the relief efforts and making a positive 
+                         impact on the lives of those in need.
+                    </p>
+
+                    <form class="flex flex-col gap-4" id = "noakhali-form" onsubmit="donate_form(event,'noakhali-form')">
+
+                    <input required type="number" placeholder="Write Donation Amount" class="p-3 border border-gray-50 rounded-lg"/>
+                   
+                    <button type ="submit" class="bg-donate p-3 rounded-lg font-bold" >Donate Now</button>
+                
+                </form>
+
+
+            </div>
+
+        </div>
+
+        <div class = "flex flex-col md:flex-row justify-between gap-20 mx-auto w-3/4 border border-gray-100 p-5 rounded-lg">
+
+            <img src = "./assets/feni.png"/>
+
+            <div class = "flex flex-col gap-8 ">
+                <div>
+                <a class="btn bg-gray-100 ">
+                    <img src = "./assets/coin.png">
+                    <p class="text-sm " ><span class = "fund">600</span> BDT</p>
+                
+                </a>
+            </div>
+                    <h2 class="text-lg font-bold">Donate for  <span class="donation-title">Flood Relief in Feni,Bangladesh</span></h2>
+                    <p class="text-sm text-gray-100">
+                        The recent floods in Feni have devastated local communities,
+                         leading to severe disruption and loss. Your generous donation will help provide immediate aid,
+                          including food, clean water, and medical supplies, to those affected by this calamity.
+                           Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. 
+                           Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.
+                    </p>
+
+                    <form required class="flex flex-col gap-4" id = "feni-form" onsubmit="donate_form(event,'feni-form')">
+
+                    <input type="number" placeholder="Write Donation Amount" class="p-3 border border-gray-50 rounded-lg"/>
+                   
+                    <button type ="submit" class="bg-donate p-3 rounded-lg font-bold" >Donate Now</button>
+                
+                </form>
+
+
+            </div>
+
+        </div>
+
+
+        <div class = "flex flex-col md:flex-row justify-between gap-20 mx-auto w-3/4 border border-gray-100 p-5 rounded-lg">
+
+            <img src = "./assets/quota-protest.png"/>
+
+            <div class = "flex flex-col gap-8 ">
+                <div>
+                <a class="btn bg-gray-100 ">
+                    <img src = "./assets/coin.png">
+                    <p class="text-sm " ><span class = "fund">2400</span> BDT</p>
+                
+                </a>
+            </div>
+                    <h2 class="text-lg font-bold">Aid for <span class="donation-title"> Injured in the Quota Movement</span></h2>
+                    <p class="text-sm text-gray-100">
+                        The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. 
+                        Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. 
+                        By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. 
+                        Every donation plays a vital role in alleviating their suffering and aiding in their recovery. 
+                        Please consider making a donation to support these brave individuals in their time of need.
+                    </p>
+
+                    <form class="flex flex-col gap-4" id = "quota-form" onsubmit="donate_form(event,'quota-form')">
+
+                        <input required type="number" placeholder="Write Donation Amount" class="p-3 border border-gray-50 rounded-lg"/>
+                       
+                        <button type ="submit" class="bg-donate p-3 rounded-lg font-bold" >Donate Now</button>
+                    
+                    </form>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id = "history-section" class="hidden flex">
+
+
+        <div class="mx-auto flex flex-col w-3/4 gap-3" id="history-container">
+
+           
+
+        </div>
+
+    </div>
+    </main>
+
+  
+
+<!-- Open the modal using ID.showModal() method -->
+<dialog id="confirmation_modal" class="modal">
+  <div class="modal-box flex flex-col gap-5 items-center ">
+    <h3 class="text-xl font-bold text-center">Congrats!</h3>
+    
+    <img src = "./assets/coin.png" />
+    <p class="text-xs text-gray-100">You have donated to humankind</p>
+    <p class="text-sm font-bold">Successfully</p>
+    <div class="modal-action text-center">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">close confirmation</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+</div>
+
+<footer class="h-28 bg-gray-100 mt-12">
+
+</footer>
+</body>
+
+<script src="./script.js"></script>
+</html>
